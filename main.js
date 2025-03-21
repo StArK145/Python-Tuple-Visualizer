@@ -22,7 +22,7 @@ let predefinedTuples = [
 ];
 let tuple = predefinedTuples[Math.floor(Math.random() * predefinedTuples.length)];
 let tupleDisplay = document.getElementById("tupleDisplay");
-tupleDisplay.innerHTML = tuple.map((value, index) => `<div class="tuple-item"><div class="index">${index}</div>${value}</div>`).join('');
+tupleDisplay.innerHTML = tuple.map((value, index) => `<div class="tuple-item"><div class="index">${index} (${index - tuple.length})</div>${value}</div>`).join('');
 
 function findMin() {
     document.getElementById("output").textContent = "Minimum value in tuple is " + Math.min(...tuple);
@@ -37,7 +37,10 @@ function findLen() {
 }
 
 function findIndex() {
-    let index = document.getElementById("indexInput").value;
+    let index = parseInt(document.getElementById("indexInput").value);
+    if (index < 0) {
+        index = tuple.length + index;
+    }
     if (index >= 0 && index < tuple.length) {
         document.getElementById("output").textContent = "Value at index " + index + " is " + tuple[index];
     } else {
