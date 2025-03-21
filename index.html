@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Tuple Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Tuple Visualizer</h2>
+        <div id="tupleDisplay" class="tuple-display"></div>
+        
+        <div class="button-row">
+            <button onclick="findMin()">Min</button>
+            <button onclick="findMax()">Max</button>
+            <button onclick="findLen()">Length</button>
+        </div>
+        
+        <div class="input-group">
+            <input type="number" id="indexInput" placeholder="Enter index">
+            <button onclick="findIndex()">Get Value</button>
+        </div>
+        
+        <div class="input-group">
+            <input type="number" id="countInput" placeholder="Enter number">
+            <button onclick="findCount()">Count</button>
+        </div>
+        
+        <div id="output"></div>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>
